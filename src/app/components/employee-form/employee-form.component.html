@@ -1,0 +1,33 @@
+<div class="col-md-4 offset-md-2">
+    <div class="card">
+      <div class="card-body">
+        <form action="">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="nombres">Nombres</label>
+                    <input type="text" class="form-control" id="name"  [(ngModel)]="empleado.name" [ngModelOptions]="{standalone: true}" placeholder="Ej: Oscar ...">
+                  </div>
+                  <div class="form-group">
+                    <label for="apellidos">Apellidos</label>
+                    <input type="text" class="form-control" id="last_name" [(ngModel)]="empleado.last_name" [ngModelOptions]="{standalone: true}" placeholder="Ej: Gonzales">
+                  </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="text" class="form-control" id="email" [(ngModel)]="empleado.email" [ngModelOptions]="{standalone: true}" placeholder="*******@***.com">
+                </div>
+              </div>
+                <button class="btn btn-success" (click)="edit ? updateGame() : saveNewEmployee()">Guardar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+      <div class="card card-body text-center">
+          <h3>{{empleado.name == '' ? 'Nombre Completo' : empleado.name}} {{empleado.last_name}}</h3>
+          <p>{{empleado.email == '' ? 'Correo electronico' : empleado.email}}</p>
+      </div>
+  </div>
+  
+  
+

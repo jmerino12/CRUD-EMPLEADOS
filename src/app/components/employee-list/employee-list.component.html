@@ -1,0 +1,22 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th class="text-center" scope="col">Nombres</th>
+        <th class="text-center" scope="col">Apellidos</th>
+        <th class="text-center" scope="col">Email</th>
+        <th class="text-center" scope="col">OP</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr mdbTableCol *ngFor="let empleado of empleados" >
+        <td style="vertical-align:middle;">{{empleado.name}}</td>
+        <td style="vertical-align:middle;">{{empleado.last_name}}</td>
+        <td style="vertical-align:middle;">{{empleado.email}}</td>
+        <td style="vertical-align:middle;" class="d-flex justify-content-between aling-item-center">
+            <button class="btn btn-danger" (click) = "deleteEmployee(empleado.idemployee)"><i class="fa fa-trash" aria-hidden="true"></i></button>
+            <button href="" class="btn btn-warning" [routerLink]="['/employees/edit',empleado.idemployee]"><i class="fas fa-edit"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
